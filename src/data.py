@@ -21,5 +21,5 @@ def load_prices(ticker: str = "SPY", start: str = "2005-01-01", csv: Optional[st
             close = close.iloc[:, 0]
     close = close.dropna().astype(float).sort_index()
     close.name = "close"
-    print(f"[data] {len(close)} prices, {close.index[0].date()} → {close.index[-1].date()}")
+    print(f"[data] {len(close)} prices, {close.index[0].date()} to {close.index[-1].date()}")
     return close

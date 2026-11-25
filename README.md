@@ -34,7 +34,20 @@ The script prints the out-of-sample information coefficient (rank correlation be
 
 ## Results
 
-Run `python main.py --chart outputs/spy.png` and paste the table and chart here. Expect a weak signal: on liquid index ETFs, simple price features rarely beat buy-and-hold after costs. Reporting that clearly is part of the point.
+SPY daily prices from January 2005 to November 2026. Forecasts are out of sample from April 2008 (4,689 days), with 5 basis points of cost per trade.
+
+| | Strategy | Buy & hold |
+|---|---|---|
+| Annual return | 6.6% | 11.1% |
+| Annual volatility | 15.8% | 19.7% |
+| Sharpe ratio | 0.49 | 0.63 |
+| Maximum drawdown | -40.0% | -51.5% |
+| Time in the market | 67% | 100% |
+| Trades per year | 55 | 0 |
+
+The forecasts are barely better than chance: an information coefficient of 0.022 and a 53.5% hit rate. Being out of the market a third of the time lowers volatility and the worst loss, but misses too much of the rise, so the strategy loses to buy-and-hold on both return and Sharpe ratio. That is what you would expect from simple price features on the most liquid ETF in the world, and the point of the project is to measure it without look-ahead rather than to claim an edge.
+
+![Strategy against buy and hold](docs/spy.png)
 
 ## Tests
 

@@ -39,7 +39,7 @@ def main():
         print(f"  {k:<26}{v:.4f}" if isinstance(v, float) else f"  {k:<26}{v}")
 
     bt = backtest(df, make_signal(df, a.threshold), a.cost_bps)
-    print(f"\nBacktest {bt.index[0].date()} → {bt.index[-1].date()}, costs {a.cost_bps:g} bps per trade:")
+    print(f"\nBacktest {bt.index[0].date()} to {bt.index[-1].date()}, costs {a.cost_bps:g} bps per trade:")
     print(summary(bt).round(4).to_string())
 
     if a.chart:
